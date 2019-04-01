@@ -22,7 +22,6 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
-<<<<<<< HEAD
 
 ### Swift ###
 # Xcode
@@ -48,8 +47,7 @@ xcuserdata/
 *.moved-aside
 *.xcuserstate
 
-=======
->>>>>>> 676b78661af54addd9ccf770186fe571ffba550b
+
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
@@ -63,11 +61,7 @@ playground.xcworkspace
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-<<<<<<< HEAD
-=======
 # Package.pins
->>>>>>> 676b78661af54addd9ccf770186fe571ffba550b
 .build/
 
 # CocoaPods
@@ -77,6 +71,8 @@ playground.xcworkspace
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
 # Pods/
+
+Example/Pods
 
 # Carthage
 #
@@ -90,17 +86,13 @@ Carthage/Build
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
-<<<<<<< HEAD
 # https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
-=======
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
->>>>>>> 676b78661af54addd9ccf770186fe571ffba550b
 
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
-<<<<<<< HEAD
 
 
 ### Objective-C ###
@@ -166,6 +158,4 @@ fastlane/screenshots
 iOSInjectionProject/
 
 ### Objective-C Patch ###
-*.xcscmblueprint
-=======
->>>>>>> 676b78661af54addd9ccf770186fe571ffba550b
+*.xcscmblueprint\

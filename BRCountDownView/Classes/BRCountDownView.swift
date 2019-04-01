@@ -94,12 +94,12 @@ final public class BRCountDownView: UIControl {
     
     let slideUpFromBottomTransition = CATransition()
     
-    slideUpFromBottomTransition.type = kCATransitionPush
-    slideUpFromBottomTransition.subtype = kCATransitionFromTop
+    slideUpFromBottomTransition.type = CATransitionType.push
+    slideUpFromBottomTransition.subtype = CATransitionSubtype.fromTop
     slideUpFromBottomTransition.duration = duration
     slideUpFromBottomTransition.timingFunction =
-      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    slideUpFromBottomTransition.fillMode = kCAFillModeRemoved
+        CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+    slideUpFromBottomTransition.fillMode = CAMediaTimingFillMode.removed
     
     target.layer.add(slideUpFromBottomTransition,
                      forKey: "slideInFromBottomTransition")
@@ -150,11 +150,11 @@ final public class BRCountDownView: UIControl {
 
 public extension BRCountDownView {
   // MARK: public methods
-  public func set(seconds: Int) -> Void {
+   func set(seconds: Int) -> Void {
     self.seconds = seconds
   }
   
-  public func terminate() -> Void {
+  func terminate() -> Void {
     if self.seconds > 0 {
       self.resume()
       self.seconds = 1
@@ -164,7 +164,7 @@ public extension BRCountDownView {
     }
   }
   
-  public func resume() -> Void {
+  func resume() -> Void {
     if !self.innerTimer.isValid {
       self.innerTimer = Timer.scheduledTimer(timeInterval: 1,
                                              target: self,
@@ -178,7 +178,7 @@ public extension BRCountDownView {
     }
   }
   
-  public func stop() -> Void {
+  func stop() -> Void {
     if self.innerTimer.isValid {
       self.innerTimer.invalidate()
       self.isTimerRunning = false
@@ -188,7 +188,7 @@ public extension BRCountDownView {
     }
   }
   
-  public func repeatCountDown(in seconds: Int) {
+  func repeatCountDown(in seconds: Int) {
     self.innerTimer.invalidate()
     self.isTimerRunning = false
     self.resumeTapped = true
@@ -409,15 +409,14 @@ extension UIView {
       slideUpFromBottomTransition.delegate = delegate
     }
     
-    slideUpFromBottomTransition.type = kCATransitionPush
-    slideUpFromBottomTransition.subtype = kCATransitionFromTop
+    slideUpFromBottomTransition.type = CATransitionType.push
+    slideUpFromBottomTransition.subtype = CATransitionSubtype.fromTop
     slideUpFromBottomTransition.duration = duration
     slideUpFromBottomTransition.timingFunction =
-      CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    slideUpFromBottomTransition.fillMode = kCAFillModeRemoved
+        CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+    slideUpFromBottomTransition.fillMode = CAMediaTimingFillMode.removed
     
-    layer.add(slideUpFromBottomTransition,
-              forKey: "slideInFromBottomTransition")
+    layer.add(slideUpFromBottomTransition, forKey: "slideInFromBottomTransition")
   }
   
   func animateSlideInFromLeft(_ duration: TimeInterval = 1.0,
@@ -428,13 +427,12 @@ extension UIView {
       slideInFromLeftTransition.delegate = delegate
     }
     
-    slideInFromLeftTransition.type = kCATransitionPush
-    slideInFromLeftTransition.subtype = kCATransitionFromLeft
+    slideInFromLeftTransition.type = CATransitionType.push
+    slideInFromLeftTransition.subtype = CATransitionSubtype.fromLeft
     slideInFromLeftTransition.duration = duration
-    slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    slideInFromLeftTransition.fillMode = kCAFillModeRemoved
+    slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+    slideInFromLeftTransition.fillMode = CAMediaTimingFillMode.removed
     
-    self.layer.add(slideInFromLeftTransition,
-                   forKey: "slideInFromLeftTransition")
+    self.layer.add(slideInFromLeftTransition, forKey: "slideInFromLeftTransition")
   }
 }
